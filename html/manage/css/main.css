@@ -1,0 +1,196 @@
+@CHARSET "UTF-8";
+
+body { margin: 0; padding: 0; background-color: white; color: #222; overflow: hidden; }
+/* Default font */
+body { font: normal 12px "Arial", sans-serif; }
+
+
+/* Components */
+.ManageInput { border: 1px solid #666666; border-radius: 2px; padding: 3px 4px; outline: none; }
+.ManageInput:focus { border-color: #2c628b; }
+h1 { color: #003399; font: normal 14pt "Arial Narrow", "Arial", sans-serif; padding: 0; margin: 5px 0 20px 10px; }
+
+/* Toolbar */
+.MenuBundle { padding: 2px 9px 1px 9px; height: 87px; overflow: hidden; float: left; }
+.MenuBundle img { border: 0; }
+.MenuSeparator { float: left; width: 1px; height: 80px; margin-top: 4px; background-color: #a5b7d0; border: 1px solid #ecf1fa; }
+.MenuBundle .MenuContents { padding: 2px; height: 67px; }
+.MenuBundle .MenuCaption { padding: 1px; height: 14px; text-align: center; color: #738399; font-size: 11px; line-height: 14px; margin-bottom: -6px; }
+.MenuBundle .MenuContents table th { white-space: nowrap; font-weight: normal; font-size: 12px; text-align: left; padding-right: 4px; color: #4c607a; line-height: 19px; }
+.MenuBundle .MenuContents table td { white-space: nowrap; font-weight: normal; font-size: 12px; text-align: left; overflow: hidden; }
+.MenuBundle .MenuContents table td a { text-decoration: none; color: #1e395b; display: block; float: left; padding: 3px 6px 3px 2px; }
+.MenuBundle .MenuContents table td a img { vertical-align: -2px; }
+.MenuBundle .MenuContents table td span.Disabled{ color: #8d8d8d; display: block; float: left; padding: 3px 6px 3px 2px; }
+.MenuBundle .MenuContents table td span.Disabled img { vertical-align: -2px; opacity: 0.5; }
+.MenuBundle .MenuContents label { vertical-align: 2px; }
+.MenuBundle .Disabled { pointer-events: none; cursor: default; }
+.MenuBundle .Disabled * { opacity: 0.35; }
+
+.MainPanelToolbar .BigButton { text-decoration: none; float: left; overflow: hidden; text-align: center; padding: 3px 6px 3px 2px; margin: 2px 2px 0 2px; }
+.MainPanelToolbar .BigButton span { display: block; text-align: center; color: #1e395b; margin-top: 5px; }
+
+.MainPanelToolbar .FancyHover:hover { border: 1px solid #ffb700; padding: 2px 5px 2px 1px; box-shadow: inset 0 0 3px #ffffff;
+background: #fdf0e1; /* Old browsers */
+background: -moz-linear-gradient(top,  #fdf0e1 0%, #fddfbb 44%, #ffce69 46%, #fff8a8 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdf0e1), color-stop(44%,#fddfbb), color-stop(46%,#ffce69), color-stop(100%,#fff8a8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #fdf0e1 0%,#fddfbb 44%,#ffce69 46%,#fff8a8 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #fdf0e1 0%,#fddfbb 44%,#ffce69 46%,#fff8a8 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #fdf0e1 0%,#fddfbb 44%,#ffce69 46%,#fff8a8 100%); /* IE10+ */
+background: linear-gradient(top,  #fdf0e1 0%,#fddfbb 44%,#ffce69 46%,#fff8a8 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdf0e1', endColorstr='#fff8a8',GradientType=0 ); /* IE6-9 */
+}
+
+/* Interface */
+.MainPanelContentsDiv { overflow: auto; padding: 0 2px; }
+.MainPanelToolbar { height: 90px; border-top: 1px solid #9faec2; border-bottom: 1px solid #9faec2; overflow: hidden;
+background: #fbfdff; /* Old browsers */
+background: -moz-linear-gradient(top,  #fbfdff 0%, #dce7f5 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfdff), color-stop(100%,#dce7f5)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #fbfdff 0%,#dce7f5 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #fbfdff 0%,#dce7f5 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #fbfdff 0%,#dce7f5 100%); /* IE10+ */
+background: linear-gradient(top,  #fbfdff 0%,#dce7f5 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfdff', endColorstr='#dce7f5',GradientType=0 ); /* IE6-9 */
+}
+
+
+.MainPanelSeparator { width: 3px; font-size: 1px; overflow: hidden; background-color: #CCC; cursor: e-resize; }
+.MainPanelNavigationDiv { width: 245px; padding: 1px; overflow: auto; border-right: 2px solid #ecf1fa; }
+.MainPanelNavigationDiv .Menu { padding-left: 10px; cursor: pointer; color: black; }
+.MainPanelNavigationDiv .Menu .Name { padding: 1px 0 1px 1px; min-height: 18px; text-transform: capitalize; border: 1px solid white; border-radius: 2px; }
+.MainPanelNavigationDiv .Menu .Name a { color: black; text-decoration: none; }
+.MainPanelNavigationDiv .Menu .Name img { border: 0; margin-right: 5px; vertical-align: -3px; }
+.MainPanelNavigationDiv .Menu .Name small { color: gray; }
+.MainPanelNavigationDiv .Menu .Name:hover { margin: 0; border-color: #d9d9d9;
+background: #f8f8f8; /* Old browsers */
+background: -moz-linear-gradient(top,  #f8f8f8 0%, #e5e5e5 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #f8f8f8 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #f8f8f8 0%,#e5e5e5 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #f8f8f8 0%,#e5e5e5 100%); /* IE10+ */
+background: linear-gradient(top,  #f8f8f8 0%,#e5e5e5 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+}
+.MainPanelNavigationDiv .Disabled { pointer-events: none; cursor: default; }
+.MainPanelNavigationDiv .Disabled * { color: #AAA; }
+.MainPanelNavigationDiv .Disabled .Name a { color: #AAA; pointer-events: none; cursor: default; }
+.MainPanelNavigationDiv .Disabled img { opacity: 0.65; }
+
+.MainPanelVisibilityToggler { width: 16px; height: 16px; cursor: pointer; border: 0; z-index: 1000;}
+.MainPanelToolbar, .MainPanelNavigationDiv, .MainPanelContentsDiv, .MainPanelVisibilityToggler { position: absolute; display: none; }
+
+
+.ManageORMList thead th { background-color: #fcfcfc; color: #4c607a; border: 1px solid #fcfcfc; border-right-color: #dfe9f6; font-weight: normal; font-size: 12px; padding: 5px 3px; text-transform: capitalize; cursor: pointer; }
+.ManageORMList thead th a { text-decoration: none; color: #4c607a; display: block; }
+.ManageORMList thead tr th:last-child { border-right-width:0; }
+.ManageORMList thead th:hover{ background-color: #f3f8fd; border: 1px solid #e3e8ee; box-shadow: inset 0 0 2px #ffffff; }
+.ManageORMList thead th .UpArrow { font-size: 9px; color: #4c607a; display: block; position: relative; margin-top: -8px; height: 5px; margin-bottom: 3px; }
+.ManageORMList thead th .DownArrow { font-size: 9px; color: #4c607a; display: block; position: relative; margin-top: -5px; height: 5px; margin-bottom: 0; }
+
+.ManageORMList tbody tr td { padding: 3px 3px; border-right: 1px solid #EEE; cursor: default; }
+.ManageORMList tbody tr td a { color: black; }
+.ManageORMList tbody tr:nth-child(odd) td { background-color: #EEEEDE; }
+.ManageORMList tbody tr td:last-child { border-right-width:0; }
+.ManageORMList tbody tr td.NotImportant { color: #6d6d6d; width: 1px; white-space: nowrap; }
+.ManageORMList tbody tr td abbr { color: #6d6d6d; border-bottom: 1px dotted #6d6d6d; }
+.ManageORMList tbody tr:hover td.NotImportant { color: black; }
+.ManageORMList tbody tr .multicheck { margin: 0; padding:0; width: 10px; }
+.ManageORMList tbody tr.HighlightRow td {  border-top: 1px solid #0f81d9; border-bottom: 1px solid #0f81d9; padding: 2px 3px;background-color: #d1e8ff;}
+.ManageORMList tbody tr.HighlightRow td:first-child { border-left: 1px solid #0f81d9; padding-left: 2px; }
+.ManageORMList tbody tr.HighlightRow td:last-child  { border-right: 1px solid #0f81d9; padding-right: 2px;  }
+.ManageORMList tbody tr:hover td {  border-top: 1px solid #70c0e7; border-bottom: 1px solid #70c0e7; padding: 2px 3px;background-color: #e5f3fb !important;}
+.ManageORMList tbody tr:hover td:first-child { border-left: 1px solid #70c0e7; padding-left: 2px; }
+.ManageORMList tbody tr:hover td:last-child  { border-right: 1px solid #70c0e7; padding-right: 2px;  }
+.ManageORMList tbody tr td.Numeration { text-align: right; color: #4c607a; font-size: 10px; font-family: Tahoma, sans-serif; }
+
+.ManageORMList tbody tr.Selected td { border-top: 1px solid #FFB342; border-bottom: 1px solid #FFB342; padding: 2px 3px;
+background: #ffdfaf; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffdfaf 0%, #ffcd82 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffdfaf), color-stop(100%,#ffcd82)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffdfaf 0%,#ffcd82 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffdfaf 0%,#ffcd82 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffdfaf 0%,#ffcd82 100%); /* IE10+ */
+background: linear-gradient(top,  #ffdfaf 0%,#ffcd82 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffdfaf', endColorstr='#ffcd82',GradientType=0 ); /* IE6-9 */
+}
+.ManageORMList tbody tr.Selected td:first-child { border-left: 1px solid #FFB342; padding-left: 2px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; }
+.ManageORMList tbody tr.Selected td:last-child  { border-right: 1px solid #FFB342; padding-right: 2px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; }
+
+
+.ManageORMList .minimal { width: 1px; white-space: nowrap; }
+.ManageORMList .numeric { text-align: right; }
+.ManageORMList .JSHelperLink { cursor: pointer; }
+
+/* Entry Edit */
+.ManageORMEntry .Header { border-bottom: 1px solid #DDD; background-color: #EEE; overflow: hidden; margin: 0 -2px 2px -2px; padding: 5px; }
+.ManageORMEntry .Header h2 { color: #003399; font: normal 14pt "Arial Narrow", "Arial", sans-serif; padding: 0; margin: 0; }
+.ManageORMEntry .ReadonlyFields { overflow: hidden; margin-top: 10px; }
+.ManageORMEntry .ReadonlyFields .Field { float: left; margin-right: 10px; }
+.ManageORMEntry .ReadonlyFields .Field span { color: #999; margin-right: 6px; }
+.ManageORMEntry .ReadonlyFields .Field b { font-weight: normal; }
+.ManageORMEntry .TogglersFields { overflow: hidden; }
+.ManageORMEntry .TogglersFields input { vertical-align: -1px; margin-left: 0; }
+.ManageORMEntry .TogglersFields .Field{ float: left; margin-right: 15px; }
+.ManageORMEntry .Caption { overflow: hidden; }
+.ManageORMEntry .Caption div { float: left; margin: 0 8px 0 8px; color: #003399; font-weight: normal; }
+.ManageORMEntry .Caption hr { border: 0; height: 1px; background-color: #b2c1e0; margin: 8px 5px 0 0; }
+.ManageORMEntry .FieldsTable tbody th { font-weight: normal; text-align: left; text-transform: capitalize; padding: 0 8px 0 0; color: #666; }
+.ManageORMEntry .FieldsTable tbody th i { font-family: "Times New Roman", serif; text-transform: none; display: block; text-align: right; }
+.ManageORMEntry .FieldsHashtable tbody th { text-transform: none; }
+.ManageORMEntry .FieldsHashtable tbody th b { font-weight: normal; }
+
+/* Entry Input fields */
+.ManageORMEntry .FieldsTable .CommonInput { border: 1px solid #b7d9ed; border-top-color: #3d7bad; padding: 3px 2px; outline: none; }
+.ManageORMEntry .FieldsTable .CommonInput:focus { border-color: #3d7bad; }
+.FieldsOther .CommonInput { width :40em; }
+.FieldsNumeric .CommonInput { width: 8em; text-align: right; }
+.FieldsList .input[type="checkbox"], .FieldsList .input[type="radio"] { vertical-align: -2px; }
+.ManageORMEntry .JSHelperLink { color: #999; margin-left: 8px; border-bottom: 1px dotted #999; cursor: pointer; }
+.ManageORMEntry .JSHelperLink:hover { color: #333; border-bottom-style: solid; color: #111; }
+
+/* Diagnostic page */
+.TableDiagnostic { margin: 0 20px; }
+.TableDiagnostic img { vertical-align: middle; }
+.TableDiagnostic th { text-align: left; font-weight: normal; color: #003399; font-size: 12px; padding: 0 15px 0 2px; }
+.TableDiagnostic th a { color: #003399; }
+.TableDiagnostic td { color: #999; }
+.TableDiagnostic td.NotOk { color: black; font-weight: bolder; }
+.TableDiagnostic .Caption { overflow: hidden; padding-top: 15px; padding-bottom: 5px; }
+.TableDiagnostic .Caption div { float: left; margin: 0 8px 0 8px; color: #003399; font-weight: normal; }
+.TableDiagnostic .Caption hr { border: 0; height: 1px; background-color: #b2c1e0; margin: 8px 5px 0 0; }
+
+
+/* Users management */
+.UserTable th { text-align: left; font-weight: normal; color: #003399; font-size: 12px; padding: 0 15px 0 2px; vertical-align: top; }
+.UserTable th small { display: block; margin-bottom: 15px; color: #999; }
+.UserTable td { max-width: 500px; }
+.UserTable .Right { margin: 0 0 2px 0; background-color: #EEF; }
+.UserTable .Right label { font-weight: bold; }
+.UserTable .PasswordChange p { display: none; }
+
+.ManageLogList tbody tr:nth-child(odd) td { background-color: transparent; }
+.ManageLogList tbody tr.Odder td { background-color: #EEEEDE; }
+
+/* Reports */
+.TableReportForm { margin: 0 20px; }
+.TableReportForm th { text-align: left; font-weight: normal; color: #003399; font-size: 12px; padding: 0 15px 0 2px; }
+.TableReportForm td { color: #333; }
+.TableReportForm input[type="text"], .TableReportForm select { border: 1px solid #b7d9ed; border-top-color: #3d7bad; padding: 3px 2px; outline: none; }
+.TableReportForm input[type="text"]:focus, .TableReportForm select:focus { border-color: #3d7bad; }
+
+.ReportGraph { width: 700px; height: 250px; margin: 20px; }
+.ReportGraphOptions input { width: 12px; height: 12px;}
+.ReportGraphOptions label { margin-right: 1em; color: #039; border-bottom: 1px dotted #039; cursor: pointer; }
+
+.ReportDescription { color: #039; font: normal 12px Arial, sans-serif; display: block; margin: -15px 0 15px 10px; }
+
+.ManageORMList .digit_positive { color: green; }
+.ManageORMList .digit_negative { color: red; }
+
+#IllustrationsBlock { border: 1px solid #039; padding: 2px; margin: 1px; display: none; }
+.IllustrationsToggle { color: #039; display: inline-block; border-bottom: 1px dotted #039; cursor: pointer; }
+.IllustrationsToggle:hover { border-bottom-style: solid; }
+.IllustrationImage { cursor: pointer; width: 64px; height: 64px; margin: 2px; }
+.IllustrationImage:hover { margin: 0; border: 2px solid #039; }
+#IllustrationsBlock span{ cursor: pointer; display: inline-block; margin-left: -1em; vertical-align: top; width: 1em; text-align: center; background-color: white; color: red; font-weight: bold; }
+#IllustrationsBlock span:hover { background-color: red; color :white; }
