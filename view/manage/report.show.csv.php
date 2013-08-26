@@ -4,7 +4,16 @@ $o->sendContentType( Output::CONTENT_TYPE_PLAIN );
 $headers = $o->data->report->getHeaders();
 $headers_count = count( $headers );
 $data = $o->data->report->getRowset();
+$title = str_replace(array(' ', '"'), '_', $o->data->report->getTitle());
 
+// Exporting to file
+header("Content-Description: File Transfer\r\n");
+header("Pragma: public\r\n");
+header("Expires: 0\r\n");
+header("Cache-Control: must-revalidate, post-check=0, pre-check=0\r\n");
+header("Cache-Control: public\r\n");
+header("Content-Type: text/plain; charset=windows-1251\r\n");
+header("Content-Disposition: attachment; filename=\"".$title.".csv\"\r\n");
 
 foreach ( $headers as $h ){
     if (is_array($h) ) $h = $h[0];
@@ -23,3 +32,5 @@ foreach ( $data as $rowindex=>$row ){
     }
     echo "\n";
 }
+
+die();
